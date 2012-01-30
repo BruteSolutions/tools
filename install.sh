@@ -42,8 +42,8 @@ echo "Building framework and glsdk.."
 cd gltut
 
 ~/gltut/bin/premake4 gmake
-echo -e "LDFLAGS=-L../lib;\nINCLUDES=-I../inc\n" > Makefile
 mv Makefile Makefile2
+echo -e "LDFLAGS=-L../lib\nINCLUDES=-I../inc\n" > Makefile
 cat Makefile2 >> Makefile
 rm Makefile2
 
