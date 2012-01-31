@@ -3,8 +3,6 @@
 #Run from your home directory at KTH, NOT FROM ANY SSH SERVER!
 #Also, don't run when my.nada.kth.se is down.
 
-PRE="~/gltut/bin/premake4 gmake"
-
 echo "[BS] OpenGL package installation, one moment.."
 sleep 2
 cd ~
@@ -51,7 +49,7 @@ rm Makefile2
 echo "Downgrading GLSL version.."
 find . -type f -print0 | xargs -0 sed -i 's/version 330/version 150/g'
 
-sed -i 's/glutinitcontextversion (3, 3)/glutinitcontextversion (3, 1)/g' framework/framework.cpp
+sed -i 's/glutInitContextVersion (3, 3)/glutInitContextVersion (3, 2)/g' framework/framework.cpp
 
 cd glsdk
 ~/gltut/bin/premake4 gmake
